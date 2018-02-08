@@ -10,6 +10,8 @@ import UIKit
 
 class PlayViewController: UIViewController {
     @IBOutlet weak var emoji: UILabel!
+    @IBOutlet weak var answerLabel: UILabel!
+    
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -42,6 +44,17 @@ class PlayViewController: UIViewController {
         // Pass the selected object to the new view controller.
     }
     */
+    //????https://stackoverflow.com/questions/24789515/how-to-replace-nth-character-of-a-string-with-another
+    @IBAction func changeLetter(_ sender: UIButton) {
+        
+        var change = answerLabel.text!
+        let buttonText: String = sender.titleLabel!.text!
+        let start = change.index(change.startIndex, offsetBy: 0)
+        let end = change.index(change.startIndex, offsetBy: 0 + 1)
+        change.replaceSubrange(start..<end, with: buttonText)
+        
+        answerLabel.text = change
+    }
 
 }
 
