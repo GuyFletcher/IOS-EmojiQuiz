@@ -13,20 +13,35 @@ class PlayViewController: UIViewController {
     @IBOutlet weak var answerLabel: UILabel!
     
     
+    var keys = [String]()
+    var newDict: [String : String] = [:]
+    var currentKey = 0
+    
+    
     override func viewDidLoad() {
         super.viewDidLoad()
 
         // Do any additional setup after loading the view.
         
         
-        
         if let path = Bundle.main.url(forResource: "q&a", withExtension: "plist"), let dict = NSDictionary(contentsOf: path) as? [String : String]
         {
-            var keys = Array(dict.keys)
+            newDict = dict
+            keys = Array(dict.keys)
             keys = keys.shuffled()
             emoji.text = keys[0]
         }
         
+        
+        print(newDict[keys[0]])
+        var change = ""
+        
+        for _ in 1...newDict[keys[0]]!.count
+        {
+            change = "\(change)\("-")"
+        }
+        print(change)
+        answerLabel.text = change
     }
 
     override func didReceiveMemoryWarning() {
@@ -47,13 +62,31 @@ class PlayViewController: UIViewController {
     //????https://stackoverflow.com/questions/24789515/how-to-replace-nth-character-of-a-string-with-another
     @IBAction func changeLetter(_ sender: UIButton) {
         
-        var change = answerLabel.text!
-        let buttonText: String = sender.titleLabel!.text!
-        let start = change.index(change.startIndex, offsetBy: 0)
-        let end = change.index(change.startIndex, offsetBy: 0 + 1)
-        change.replaceSubrange(start..<end, with: buttonText)
+        var toChange = Array(answerLabel.text!)
+        var buttonText = Array(sender.titleLabel!.text!)
         
-        answerLabel.text = change
+        
+        var characters = Array(newDict[keys[currentKey]]!)
+        print(buttonText)
+        
+        for i in 0...(characters.count-1) {
+            if characters[i] == buttonText[0] {
+                toChange[i] = buttonText[0]
+                print(toChange)
+            }
+        }
+        
+        /*let start = change.index(change.startIndex, offsetBy: 0)
+        let end = change.index(change.startIndex, offsetBy: 0 + 1)
+        change.replaceSubrange(start..<end, with: buttonText)*/
+        
+        answerLabel.text = String(toChange)
+        sender.isEnabled = false
+        
+        if answerLabel.text == newDict[keys[currentKey]]
+        {
+            print("You win!")
+        }
     }
 
 }
