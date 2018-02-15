@@ -8,14 +8,40 @@
 
 import UIKit
 
+import AVFoundation
+
+var player: AVAudioPlayer?
+
+//Function below taken from https://stackoverflow.com/questions/32036146/how-to-play-a-sound-using-swift
+func playSound(soundName: String) {
+    guard let url = Bundle.main.url(forResource: soundName, withExtension: "wav") else { return }
+    
+    do {
+        try AVAudioSession.sharedInstance().setCategory(AVAudioSessionCategoryPlayback)
+        try AVAudioSession.sharedInstance().setActive(true)
+        
+        
+        player = try AVAudioPlayer(contentsOf: url, fileTypeHint: AVFileType.mp3.rawValue)
+        
+        guard let player = player else { return }
+        
+        player.play()
+        
+    } catch let error {
+        print(error.localizedDescription)
+    }
+}
+
 class PlayViewController: UIViewController {
     @IBOutlet weak var emoji: UILabel!
     @IBOutlet weak var answerLabel: UILabel!
     
-    
+    var numQuestions: Int = 0
+    var questionType: Bool = false
     var keys = [String]()
     var newDict: [String : String] = [:]
     var currentKey = 0
+    var change = ""
     
     
     override func viewDidLoad() {
@@ -24,17 +50,27 @@ class PlayViewController: UIViewController {
         // Do any additional setup after loading the view.
         
         
-        if let path = Bundle.main.url(forResource: "q&a", withExtension: "plist"), let dict = NSDictionary(contentsOf: path) as? [String : String]
-        {
-            newDict = dict
-            keys = Array(dict.keys)
-            keys = keys.shuffled()
-            emoji.text = keys[0]
+        if questionType == false {
+            if let path = Bundle.main.url(forResource: "q&a", withExtension: "plist"), let dict = NSDictionary(contentsOf: path) as? [String : String]
+            {
+                newDict = dict
+                keys = Array(dict.keys)
+                keys = keys.shuffled()
+                emoji.text = keys[0]
+            }
+        }
+        else {
+            if let path = Bundle.main.url(forResource: "bad", withExtension: "plist"), let dict = NSDictionary(contentsOf: path) as? [String : String]
+            {
+                newDict = dict
+                keys = Array(dict.keys)
+                keys = keys.shuffled()
+                emoji.text = keys[0]
+            }
         }
         
         
         print(newDict[keys[0]])
-        var change = ""
         
         for _ in 1...newDict[keys[0]]!.count
         {
@@ -63,6 +99,7 @@ class PlayViewController: UIViewController {
     @IBAction func changeLetter(_ sender: UIButton) {
         
         var toChange = Array(answerLabel.text!)
+        let soundMaybe = toChange
         var buttonText = Array(sender.titleLabel!.text!)
         
         
@@ -76,17 +113,42 @@ class PlayViewController: UIViewController {
             }
         }
         
-        /*let start = change.index(change.startIndex, offsetBy: 0)
-        let end = change.index(change.startIndex, offsetBy: 0 + 1)
-        change.replaceSubrange(start..<end, with: buttonText)*/
-        
-        answerLabel.text = String(toChange)
-        sender.isEnabled = false
-        
-        if answerLabel.text == newDict[keys[currentKey]]
-        {
-            print("You win!")
+        if toChange == soundMaybe {
+            playSound(soundName: "buzz")
+            print("Sound")
         }
+        else
+        {
+            answerLabel.text = String(toChange)
+            //don't want to renable it so commented out for now
+            //sender.isEnabled = false
+            
+            if answerLabel.text == newDict[keys[currentKey]]
+            {
+                print("You got it!")
+                playSound(soundName: "win")
+                currentKey += 1
+                if currentKey < numQuestions {
+                    //changes question, add animation here
+                    print("Plus one")
+                    emoji.text = keys[currentKey]
+                    change = ""
+                    
+                    for _ in 1...newDict[keys[0]]!.count
+                    {
+                        change = "\(change)\("-")"
+                    }
+                    answerLabel.text = change
+                }
+                else {
+                    print("Game Over!")
+                    //Add segue to final view controller
+                }
+                
+            }
+        }
+
+        sender.isEnabled = false
     }
 
 }

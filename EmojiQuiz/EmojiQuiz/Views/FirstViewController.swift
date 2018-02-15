@@ -11,6 +11,7 @@ import UIKit
 class FirstViewController: UIViewController {
     @IBOutlet weak var numQuestions: UILabel!
     @IBOutlet weak var numStep: UIStepper!
+    @IBOutlet weak var qSelection: UISegmentedControl!
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -29,6 +30,22 @@ class FirstViewController: UIViewController {
         numQuestions.text = Int(numStep.value).description
     }
     
-    
+    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
+        // Get the new view controller using segue.destinationViewController.
+        // Pass the selected object to the new view controller.
+        if segue.identifier == "playSegue" {
+            if let pvc = segue.destination as? PlayViewController {
+                pvc.numQuestions = Int(numStep.value)
+                if(qSelection.selectedSegmentIndex == 0)
+                {
+                    pvc.questionType = false
+                }
+                else
+                {
+                   pvc.questionType = true
+                }
+            }
+        }
+    }
 }
 

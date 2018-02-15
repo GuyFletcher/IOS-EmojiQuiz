@@ -15,6 +15,10 @@
 		1C09967B2020E11E00EFE58E /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 1C0996792020E11E00EFE58E /* LaunchScreen.storyboard */; };
 		1C0996832020EB0E00EFE58E /* q&a.plist in Resources */ = {isa = PBXBuildFile; fileRef = 1C0996822020EB0E00EFE58E /* q&a.plist */; };
 		1C0996852020EBE900EFE58E /* PlayViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1C0996842020EBE900EFE58E /* PlayViewController.swift */; };
+		1CB14CA32035CFC1005D07A3 /* win.wav in Resources */ = {isa = PBXBuildFile; fileRef = 1CB14CA22035CFC1005D07A3 /* win.wav */; };
+		1CB14CA52035CFDE005D07A3 /* buzz.wav in Resources */ = {isa = PBXBuildFile; fileRef = 1CB14CA42035CFDE005D07A3 /* buzz.wav */; };
+		1CB14CA72035D326005D07A3 /* FinalViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1CB14CA62035D326005D07A3 /* FinalViewController.swift */; };
+		1CB14CAB2035D606005D07A3 /* bad.plist in Resources */ = {isa = PBXBuildFile; fileRef = 1CB14CAA2035D606005D07A3 /* bad.plist */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -28,6 +32,10 @@
 		1C09967C2020E11E00EFE58E /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		1C0996822020EB0E00EFE58E /* q&a.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = "q&a.plist"; sourceTree = "<group>"; };
 		1C0996842020EBE900EFE58E /* PlayViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PlayViewController.swift; sourceTree = "<group>"; };
+		1CB14CA22035CFC1005D07A3 /* win.wav */ = {isa = PBXFileReference; lastKnownFileType = audio.wav; path = win.wav; sourceTree = "<group>"; };
+		1CB14CA42035CFDE005D07A3 /* buzz.wav */ = {isa = PBXFileReference; lastKnownFileType = audio.wav; path = buzz.wav; sourceTree = "<group>"; };
+		1CB14CA62035D326005D07A3 /* FinalViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FinalViewController.swift; sourceTree = "<group>"; };
+		1CB14CAA2035D606005D07A3 /* bad.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = bad.plist; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -67,6 +75,9 @@
 				1C0996792020E11E00EFE58E /* LaunchScreen.storyboard */,
 				1C09967C2020E11E00EFE58E /* Info.plist */,
 				1C0996822020EB0E00EFE58E /* q&a.plist */,
+				1CB14CAA2035D606005D07A3 /* bad.plist */,
+				1CB14CA42035CFDE005D07A3 /* buzz.wav */,
+				1CB14CA22035CFC1005D07A3 /* win.wav */,
 			);
 			path = EmojiQuiz;
 			sourceTree = "<group>";
@@ -77,6 +88,7 @@
 				1C0996702020E11E00EFE58E /* FirstViewController.swift */,
 				1C0996722020E11E00EFE58E /* SecondViewController.swift */,
 				1C0996842020EBE900EFE58E /* PlayViewController.swift */,
+				1CB14CA62035D326005D07A3 /* FinalViewController.swift */,
 			);
 			path = Views;
 			sourceTree = "<group>";
@@ -142,7 +154,10 @@
 			files = (
 				1C09967B2020E11E00EFE58E /* LaunchScreen.storyboard in Resources */,
 				1C0996782020E11E00EFE58E /* Assets.xcassets in Resources */,
+				1CB14CA32035CFC1005D07A3 /* win.wav in Resources */,
+				1CB14CA52035CFDE005D07A3 /* buzz.wav in Resources */,
 				1C0996832020EB0E00EFE58E /* q&a.plist in Resources */,
+				1CB14CAB2035D606005D07A3 /* bad.plist in Resources */,
 				1C0996762020E11E00EFE58E /* Main.storyboard in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -154,6 +169,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				1CB14CA72035D326005D07A3 /* FinalViewController.swift in Sources */,
 				1C0996852020EBE900EFE58E /* PlayViewController.swift in Sources */,
 				1C0996732020E11E00EFE58E /* SecondViewController.swift in Sources */,
 				1C09966F2020E11E00EFE58E /* AppDelegate.swift in Sources */,
