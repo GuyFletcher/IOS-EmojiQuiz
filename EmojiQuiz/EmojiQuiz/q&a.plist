@@ -4,12 +4,12 @@
 <dict>
 	<key>🍕</key>
 	<string>PIZZA</string>
-	<key>👩🏼‍🎓⌚️</key>
-	<string>SMARTWATCH</string>
-	<key>☀️📅</key>
-	<string>SUNNYDAY</string>
-	<key>🛌🕰</key>
-	<string>NAPTIME</string>
+	<key>👩🏼‍🎓📖</key>
+	<string>STUDENT</string>
+	<key>🗣📢💥</key>
+	<string>LOUD</string>
+	<key>🛌😴</key>
+	<string>NAP</string>
 	<key>💰💵💎</key>
 	<string>WEALTHY</string>
 </dict>

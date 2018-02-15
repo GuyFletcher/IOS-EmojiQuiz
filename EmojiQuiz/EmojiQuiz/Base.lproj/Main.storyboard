@@ -403,14 +403,14 @@
                                 <nil key="textColor"/>
                                 <nil key="highlightedColor"/>
                             </label>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" ambiguous="YES" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="4AX-QN-sI3">
-                                <rect key="frame" x="142" y="364" width="42" height="21"/>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" ambiguous="YES" text="Score:" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="4AX-QN-sI3">
+                                <rect key="frame" x="142" y="364" width="50" height="21"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                 <nil key="textColor"/>
                                 <nil key="highlightedColor"/>
                             </label>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" ambiguous="YES" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="nYe-tI-BEG">
-                                <rect key="frame" x="190" y="364" width="42" height="21"/>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" ambiguous="YES" text="0" textAlignment="right" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="nYe-tI-BEG">
+                                <rect key="frame" x="221" y="364" width="11" height="21"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                 <nil key="textColor"/>
                                 <nil key="highlightedColor"/>
@@ -420,6 +420,8 @@
                         <constraints>
                             <constraint firstItem="i2A-PA-lEh" firstAttribute="centerX" secondItem="Wgv-xN-V3h" secondAttribute="centerX" id="CRJ-L6-B3z"/>
                             <constraint firstItem="ZwU-ZU-c85" firstAttribute="centerX" secondItem="Wgv-xN-V3h" secondAttribute="centerX" id="L2y-Lt-fVx"/>
+                            <constraint firstItem="Wgv-xN-V3h" firstAttribute="trailing" secondItem="nYe-tI-BEG" secondAttribute="trailing" constant="143" id="Swn-9K-yxH"/>
+                            <constraint firstItem="4AX-QN-sI3" firstAttribute="leading" secondItem="Wgv-xN-V3h" secondAttribute="leading" constant="142" id="TLl-IQ-Tux"/>
                             <constraint firstItem="i2A-PA-lEh" firstAttribute="centerY" secondItem="Wgv-xN-V3h" secondAttribute="centerY" id="alG-3x-9XN"/>
                             <constraint firstItem="nYe-tI-BEG" firstAttribute="top" secondItem="i2A-PA-lEh" secondAttribute="bottom" constant="8" id="bNC-4j-bWv"/>
                             <constraint firstItem="i2A-PA-lEh" firstAttribute="top" secondItem="ZwU-ZU-c85" secondAttribute="bottom" constant="8" id="kKM-hC-djG"/>
