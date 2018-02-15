@@ -78,9 +78,9 @@ class PlayViewController: UIViewController {
         }
         
         
-        print(newDict[keys[0]])
+        print(newDict[keys[currentKey]]!)
         
-        for _ in 1...newDict[keys[0]]!.count
+        for _ in 1...newDict[keys[currentKey]]!.count
         {
             change = "\(change)\("-")"
         }
@@ -111,7 +111,7 @@ class PlayViewController: UIViewController {
         
         
         var characters = Array(newDict[keys[currentKey]]!)
-        print(buttonText)
+        print("Characters" + characters)
         
         for i in 0...(characters.count-1) {
             if characters[i] == buttonText[0] {
@@ -144,13 +144,14 @@ class PlayViewController: UIViewController {
                 print("You got it!")
                 playSound(soundName: "win")
                 currentKey += 1
+                print(currentKey);
                 if currentKey < numQuestions {
                     //changes question, add animation here
                     print(score)
                     emoji.text = keys[currentKey]
                     change = ""
                     
-                    for _ in 1...newDict[keys[0]]!.count
+                    for _ in 1...newDict[keys[currentKey]]!.count
                     {
                         change = "\(change)\("-")"
                     }
@@ -175,6 +176,7 @@ class PlayViewController: UIViewController {
         // Pass the selected object to the new view controller.
         if segue.identifier == "finalSegue" {
             if let fvc = segue.destination as? FinalViewController {
+                print("Final score!" + String(score));
                 fvc.score = score
             }
         }

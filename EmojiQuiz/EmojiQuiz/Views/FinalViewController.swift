@@ -10,11 +10,15 @@ import UIKit
 
 class FinalViewController: UIViewController {
     
-    var score: Int = 0
-
+    var score: Int?
+    @IBOutlet weak var finalScore: UILabel!
+    @IBOutlet weak var saveScore: UIButton!
+    @IBOutlet weak var username: UITextField!
+    
     override func viewDidLoad() {
         super.viewDidLoad()
-
+        print(score!)
+        finalScore.text = String(score!)
         // Do any additional setup after loading the view.
     }
 
@@ -24,6 +28,46 @@ class FinalViewController: UIViewController {
     }
     
 
+    
+    @IBAction func saveFinalScore(_ sender: UIButton) {
+        struct HIGHSCORE {
+            var name : String
+            var score : Int
+            
+            init(name : String, score : Int) {
+                self.name = name
+                self.score = score
+            }
+            
+            init?(dictionary : [String:Any]) {
+                guard let name = dictionary["name"],
+                    let score = dictionary["score"] else { return nil }
+                self.init(name: name as! String, score: score as! Int)
+            }
+            
+            var propertyListRepresentation : [String:String] {
+                return ["name" : name, "score" : String(score) ]
+            }
+
+        }
+        var highScores = [HIGHSCORE]()
+        
+        
+        
+        if let scores = UserDefaults.standard.object(forKey: "highscores") as? [[String:String]] {
+            highScores = scores.flatMap{ HIGHSCORE(dictionary: $0) }
+        }
+        
+        
+        
+        let newscores = highScores.map{ $0.propertyListRepresentation }
+        UserDefaults.standard.set(newscores, forKey: "songs")
+        
+        
+        print(newscores)
+    }
+    
+    
     /*
     // MARK: - Navigation
 

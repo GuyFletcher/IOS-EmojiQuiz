@@ -10,9 +10,20 @@ import UIKit
 
 class SecondViewController: UIViewController {
 
+    @IBOutlet weak var highScore1: UILabel!
+    @IBOutlet weak var highScore2: UILabel!
+    @IBOutlet weak var highScore3: UILabel!
+    @IBOutlet weak var highScore4: UILabel!
+    @IBOutlet weak var highScore5: UILabel!
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         // Do any additional setup after loading the view, typically from a nib.
+        
+        let myarray = UserDefaults.standard.stringArray(forKey: "highscore") ?? [String]()
+        var emptyString = ""
+      
+            
     }
 
     override func didReceiveMemoryWarning() {
@@ -20,6 +31,8 @@ class SecondViewController: UIViewController {
         // Dispose of any resources that can be recreated.
     }
 
-
+    
+    
+    
 }
 
