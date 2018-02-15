@@ -320,21 +320,59 @@
                                     </stackView>
                                 </subviews>
                             </stackView>
+                            <button hidden="YES" opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="QUG-Zs-E2R">
+                                <rect key="frame" x="95" y="536" width="184" height="30"/>
+                                <state key="normal" title="Click to Submit Final Score"/>
+                                <connections>
+                                    <segue destination="84k-T6-4EM" kind="show" id="XaG-QG-SK2"/>
+                                </connections>
+                            </button>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                         <constraints>
+                            <constraint firstItem="3sl-8d-CY2" firstAttribute="bottom" secondItem="QUG-Zs-E2R" secondAttribute="bottom" constant="52" id="2rr-4p-ROl"/>
                             <constraint firstItem="tYM-7L-7M2" firstAttribute="centerX" secondItem="3sl-8d-CY2" secondAttribute="centerX" id="Ie7-W8-mra"/>
                             <constraint firstItem="vqw-sI-eO7" firstAttribute="centerX" secondItem="3sl-8d-CY2" secondAttribute="centerX" id="YdP-eW-LqG"/>
                             <constraint firstItem="vzH-DI-uVS" firstAttribute="centerX" secondItem="3sl-8d-CY2" secondAttribute="centerX" id="dWa-M9-fAf"/>
                             <constraint firstItem="vqw-sI-eO7" firstAttribute="top" secondItem="vzH-DI-uVS" secondAttribute="bottom" constant="62" id="eoM-35-Lph"/>
                             <constraint firstItem="vzH-DI-uVS" firstAttribute="top" secondItem="tYM-7L-7M2" secondAttribute="bottom" constant="60" id="hOI-nC-Kkq"/>
                             <constraint firstItem="tYM-7L-7M2" firstAttribute="top" secondItem="3sl-8d-CY2" secondAttribute="top" constant="92" id="phm-zJ-Msi"/>
+                            <constraint firstItem="QUG-Zs-E2R" firstAttribute="centerX" secondItem="3sl-8d-CY2" secondAttribute="centerX" id="rNV-9r-e9G"/>
+                            <constraint firstItem="QUG-Zs-E2R" firstAttribute="top" secondItem="vzH-DI-uVS" secondAttribute="bottom" constant="279" id="x5y-g6-1iy"/>
                         </constraints>
                         <viewLayoutGuide key="safeArea" id="3sl-8d-CY2"/>
                     </view>
                     <connections>
                         <outlet property="answerLabel" destination="vzH-DI-uVS" id="DJb-vr-2MM"/>
                         <outlet property="emoji" destination="tYM-7L-7M2" id="eGm-26-wvV"/>
+                        <outlet property="finalButton" destination="QUG-Zs-E2R" id="urM-A5-35L"/>
+                        <outlet property="firstStack" destination="YXR-Wd-mNs" id="hXv-1S-pJV"/>
+                        <outletCollection property="allButtons" destination="W64-EE-zrs" collectionClass="NSMutableArray" id="c2b-Kf-eFF"/>
+                        <outletCollection property="allButtons" destination="ye3-bQ-vDN" collectionClass="NSMutableArray" id="imE-hw-SQF"/>
+                        <outletCollection property="allButtons" destination="pNZ-gj-1Tz" collectionClass="NSMutableArray" id="VIf-xW-bSR"/>
+                        <outletCollection property="allButtons" destination="F3l-WL-I52" collectionClass="NSMutableArray" id="KME-vT-Stm"/>
+                        <outletCollection property="allButtons" destination="l8t-Gn-iYl" collectionClass="NSMutableArray" id="mLe-7v-vWF"/>
+                        <outletCollection property="allButtons" destination="jZf-3i-Hoj" collectionClass="NSMutableArray" id="F8b-80-jEY"/>
+                        <outletCollection property="allButtons" destination="hwO-Ju-voL" collectionClass="NSMutableArray" id="94z-kp-yKb"/>
+                        <outletCollection property="allButtons" destination="qfN-Hu-82d" collectionClass="NSMutableArray" id="dNd-Fh-Wv7"/>
+                        <outletCollection property="allButtons" destination="XPm-Ca-oWR" collectionClass="NSMutableArray" id="fyg-ag-a05"/>
+                        <outletCollection property="allButtons" destination="GiI-qB-QWs" collectionClass="NSMutableArray" id="7sK-EY-km2"/>
+                        <outletCollection property="allButtons" destination="c5x-Y1-er5" collectionClass="NSMutableArray" id="dhH-C9-XzO"/>
+                        <outletCollection property="allButtons" destination="sdP-Ui-pV1" collectionClass="NSMutableArray" id="lca-WS-8jd"/>
+                        <outletCollection property="allButtons" destination="E5f-Zh-KSM" collectionClass="NSMutableArray" id="u9z-3W-a6Q"/>
+                        <outletCollection property="allButtons" destination="5tU-qd-bqr" collectionClass="NSMutableArray" id="tA5-4Q-Aof"/>
+                        <outletCollection property="allButtons" destination="ZFU-cA-oHa" collectionClass="NSMutableArray" id="kLm-b0-KxW"/>
+                        <outletCollection property="allButtons" destination="CYw-EX-tzk" collectionClass="NSMutableArray" id="k7F-yv-94t"/>
+                        <outletCollection property="allButtons" destination="Q0x-2H-JCF" collectionClass="NSMutableArray" id="iNq-ix-iVD"/>
+                        <outletCollection property="allButtons" destination="BBR-7a-eaI" collectionClass="NSMutableArray" id="7te-y7-vqT"/>
+                        <outletCollection property="allButtons" destination="nzB-HK-nvF" collectionClass="NSMutableArray" id="TZA-19-5yA"/>
+                        <outletCollection property="allButtons" destination="8xr-4O-IQo" collectionClass="NSMutableArray" id="dYi-YT-xq3"/>
+                        <outletCollection property="allButtons" destination="Rig-lf-0H8" collectionClass="NSMutableArray" id="0WL-Z4-c7d"/>
+                        <outletCollection property="allButtons" destination="dWx-uC-KyN" collectionClass="NSMutableArray" id="I70-jO-CRw"/>
+                        <outletCollection property="allButtons" destination="naW-Ic-Re5" collectionClass="NSMutableArray" id="GNH-7C-7Cf"/>
+                        <outletCollection property="allButtons" destination="KPl-dM-Aw4" collectionClass="NSMutableArray" id="MET-Rl-VFZ"/>
+                        <outletCollection property="allButtons" destination="uYc-BP-ftr" collectionClass="NSMutableArray" id="klZ-M2-IUh"/>
+                        <outletCollection property="allButtons" destination="QtC-jm-l0h" collectionClass="NSMutableArray" id="wfN-tB-bzk"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="zPg-He-187" userLabel="First Responder" sceneMemberID="firstResponder"/>
@@ -350,7 +388,7 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="i2A-PA-lEh">
-                                <rect key="frame" x="137.5" y="329" width="100" height="30"/>
+                                <rect key="frame" x="137.5" y="326" width="100" height="30"/>
                                 <constraints>
                                     <constraint firstAttribute="width" constant="100" id="TPj-bm-CQw"/>
                                     <constraint firstAttribute="height" constant="30" id="ZCQ-bp-ioj"/>
@@ -360,7 +398,19 @@
                                 <textInputTraits key="textInputTraits"/>
                             </textField>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Enter Name" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="ZwU-ZU-c85">
-                                <rect key="frame" x="142" y="300" width="90" height="21"/>
+                                <rect key="frame" x="142" y="297" width="90" height="21"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" ambiguous="YES" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="4AX-QN-sI3">
+                                <rect key="frame" x="142" y="364" width="42" height="21"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" ambiguous="YES" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="nYe-tI-BEG">
+                                <rect key="frame" x="190" y="364" width="42" height="21"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                 <nil key="textColor"/>
                                 <nil key="highlightedColor"/>
@@ -371,7 +421,10 @@
                             <constraint firstItem="i2A-PA-lEh" firstAttribute="centerX" secondItem="Wgv-xN-V3h" secondAttribute="centerX" id="CRJ-L6-B3z"/>
                             <constraint firstItem="ZwU-ZU-c85" firstAttribute="centerX" secondItem="Wgv-xN-V3h" secondAttribute="centerX" id="L2y-Lt-fVx"/>
                             <constraint firstItem="i2A-PA-lEh" firstAttribute="centerY" secondItem="Wgv-xN-V3h" secondAttribute="centerY" id="alG-3x-9XN"/>
+                            <constraint firstItem="nYe-tI-BEG" firstAttribute="top" secondItem="i2A-PA-lEh" secondAttribute="bottom" constant="8" id="bNC-4j-bWv"/>
                             <constraint firstItem="i2A-PA-lEh" firstAttribute="top" secondItem="ZwU-ZU-c85" secondAttribute="bottom" constant="8" id="kKM-hC-djG"/>
+                            <constraint firstItem="nYe-tI-BEG" firstAttribute="leading" secondItem="4AX-QN-sI3" secondAttribute="trailing" constant="6" id="oNX-Df-A6j"/>
+                            <constraint firstItem="4AX-QN-sI3" firstAttribute="top" secondItem="i2A-PA-lEh" secondAttribute="bottom" constant="8" id="q0t-ho-Pcn"/>
                         </constraints>
                         <viewLayoutGuide key="safeArea" id="Wgv-xN-V3h"/>
                     </view>

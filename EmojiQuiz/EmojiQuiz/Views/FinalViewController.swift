@@ -9,6 +9,8 @@
 import UIKit
 
 class FinalViewController: UIViewController {
+    
+    var score: Int = 0
 
     override func viewDidLoad() {
         super.viewDidLoad()

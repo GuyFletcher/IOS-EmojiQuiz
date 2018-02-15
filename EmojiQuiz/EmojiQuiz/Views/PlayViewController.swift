@@ -35,6 +35,12 @@ func playSound(soundName: String) {
 class PlayViewController: UIViewController {
     @IBOutlet weak var emoji: UILabel!
     @IBOutlet weak var answerLabel: UILabel!
+    @IBOutlet weak var finalButton: UIButton!
+    @IBOutlet weak var firstStack: UIStackView!
+    @IBOutlet var allButtons: [UIButton]!
+    
+    
+    
     
     var numQuestions: Int = 0
     var questionType: Bool = false
@@ -42,6 +48,8 @@ class PlayViewController: UIViewController {
     var newDict: [String : String] = [:]
     var currentKey = 0
     var change = ""
+    var score: Int = 0
+    var numWrong: Int = 0
     
     
     override func viewDidLoad() {
@@ -85,7 +93,6 @@ class PlayViewController: UIViewController {
         // Dispose of any resources that can be recreated.
     }
     
-
     /*
     // MARK: - Navigation
 
@@ -116,21 +123,30 @@ class PlayViewController: UIViewController {
         if toChange == soundMaybe {
             playSound(soundName: "buzz")
             print("Sound")
+            score -= 5
+            numWrong += 1
+            
+            if numWrong >= 3 {
+                print("Game Over!")
+                finalButton.isHidden = false
+            }
         }
         else
         {
+            
             answerLabel.text = String(toChange)
             //don't want to renable it so commented out for now
-            //sender.isEnabled = false
+            sender.isEnabled = false
             
             if answerLabel.text == newDict[keys[currentKey]]
             {
+                score += 10
                 print("You got it!")
                 playSound(soundName: "win")
                 currentKey += 1
                 if currentKey < numQuestions {
                     //changes question, add animation here
-                    print("Plus one")
+                    print(score)
                     emoji.text = keys[currentKey]
                     change = ""
                     
@@ -139,19 +155,33 @@ class PlayViewController: UIViewController {
                         change = "\(change)\("-")"
                     }
                     answerLabel.text = change
+                    for button in allButtons {
+                        button.isEnabled = true
+                    }
                 }
                 else {
                     print("Game Over!")
                     //Add segue to final view controller
+                    finalButton.isHidden = false
                 }
                 
             }
         }
-
-        sender.isEnabled = false
+    }
+    
+    
+    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
+        // Get the new view controller using segue.destinationViewController.
+        // Pass the selected object to the new view controller.
+        if segue.identifier == "finalSegue" {
+            if let fvc = segue.destination as? FinalViewController {
+                fvc.score = score
+            }
+        }
     }
 
 }
+
 
 extension Array {
     public func shuffled() -> Array<Element> {
